@@ -1,4 +1,4 @@
-# ATM-Machine-Simulation
+# ATM-Machine-Simulation (2nd year College project)
 An ATM machine simulation that can do deposits and withdrawals  
 + check account balance 
 + has a sign-in option 
@@ -10,3 +10,4 @@ user name: fares
 Password: Paaaass1234
 for admin view:
 type /admin next to the enviroment url
+note this project was done in 2021
