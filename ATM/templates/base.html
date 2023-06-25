@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <style type="text/css">
+      body{
+        background: linear-gradient(to right, #26bcf7, #004d95);
+        margin-top: 10.7%;
+      }
+      .box{
+        background-color:#4a4a4a26;
+        box-shadow:-10px 5px 30px rgb(0 0 0 / 40%);
+        border-radius:15px;
+        padding: 30px;
+      }
+      .form-controll{
+        background: none;
+        border: none;
+        color: #efefef;
+        font-size: 20px;
+      }
+    </style>
+
+    {% block more_static %}{% endblock %}
+  </head>
+
+  <body>
+    <div class="container" style="align-content: center; align-items: center;">
+      {% block body %}
+      {% endblock %}
+    </div>
+  </body>
+</html>
