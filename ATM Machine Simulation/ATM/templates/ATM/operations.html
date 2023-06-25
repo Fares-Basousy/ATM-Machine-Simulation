@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Operations{% endblock %}
+
+{% block body %}
+    <div class="container">
+        {% if  operation  == '1' %}
+            <div class="box" style="text-align: center;">
+                <h2>Enter amount to withdraw</h2>
+                <form action="/ATM/withdrawal/" method="post"> 
+                    {% csrf_token %}          
+                    <input type="number" value="0" min="0" name="withdrawn"/>
+                    <input type="submit" value="Submit">
+                </form>
+                <input type="button" value="Return" onclick="history.back()" style="width: 30%; margin-top: 2%;">
+            </div>
+        {% elif   operation  == '2' %}
+            <div class="box" style="text-align: center;">
+                <h2> Enter amount to deposit</h2>
+                <style type="text/css">body{margin-top: 5%;}</style>
+                <form action="/ATM/deposit/" method="post">
+                    {% csrf_token %}
+                    <h2>200 pounds <input value="0" type="number" min="0"  name="twoh"/></h2>
+                    <h2>100 pounds <input value="0" type="number" min="0"name="oneh" /> </h2>
+                    <h2>&nbsp50&nbsp&nbsppounds <input value="0" min="0" type="number" name="fifty" /> </h2>
+                    <h2>&nbsp20&nbsp&nbsppounds <input value="0" min="0" type="number"  name="twenty"/> </h2>
+                    <h2>&nbsp10&nbsp&nbsppounds <input value="0" min="0" type="number" name="ten" /> </h2>
+                    <input type="submit" value="Submit" style="width:30%">
+                </form>
+                <input type="button" value="Return" onclick="history.back()" style="width: 30%; margin-top: 2%;">
+            </div>
+        {% elif  operation  == '3' %}
+            <div class="box" style="text-align:center; color: #efefef;">
+                <h2>Account Balance<br></h2>
+                <h2 style="text-decoration: underline;">{{ user.cash }} L.E</h2>
+                <input type="button" value="Return" onclick="history.back()" style="width: 30%; margin-top: 2%;">
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

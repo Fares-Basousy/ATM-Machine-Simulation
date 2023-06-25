@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+<div class="box" style="text-align: center;">
+  <h2 style="text-decoration: underline; padding-bottom: 1%;">Log In</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="form-control" style="display: inline-block; width: 20%; background: #70a5d6;">LogIn</button>
+  </form>
+</div>
+{% endblock %}
